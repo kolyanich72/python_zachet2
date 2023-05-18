@@ -8,6 +8,7 @@ fk = Faker('ru_RU')
 
 def pk_(counter_pk=1):
     """
+    функция генератор
     устанавливается начальное значение через аргумент функции-генератора на момент инициализации.
     :param counter_pk:
     :return: int
@@ -34,7 +35,7 @@ def gen_isbn():
 def gen_author(x: int):
     """генерация списка авторов книги
     :param количество авторов = int
-    :return: список авторов =list
+    :return: список авторов = list
     """
     aut_list = [fk.name() for i in range(x)]
     return aut_list
