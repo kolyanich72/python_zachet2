@@ -54,6 +54,10 @@ def f_book_gen():
 
 
 def initial():
+    """
+    запуск формирования файла json со списком из 100 книг
+    :return:
+    """
     with open('json_book_file', 'w', encoding='utf-8') as f1:
         for _ in range(1, 101):
             pk = next(pk_(_))
