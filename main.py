@@ -10,7 +10,7 @@ def pk_(counter_pk=1):
     """
     устанавливается начальное значение через аргумент функции-генератора на момент инициализации.
     :param counter_pk:
-    :return:
+    :return: int
     """
     while True:
         yield counter_pk
@@ -19,7 +19,7 @@ def pk_(counter_pk=1):
 
 def gen_title():
     """генерация названия книги
-    :return:str
+    :return: str
     """
     return fk.text(max_nb_chars=20)
 
@@ -41,11 +41,13 @@ def gen_author(x: int):
 
 
 def f_book_gen():
-    title = gen_title()
-    author = gen_author(rndm_n(1, 3))
-    bk = {'title': title, 'year': rndm_n(1800, 2023), 'pages':  rndm_n(1, 500),
+    """
+    генератор книги
+    :return: dictionary
+    """
+    bk = {'title': gen_title(), 'year': rndm_n(1800, 2023), 'pages':  rndm_n(1, 500),
           'isbn13':  gen_isbn(), 'rating': rndm_n(0, 5),
-          'price': round(rndm_flt(1, 10000), 2), 'author': author
+          'price': round(rndm_flt(1, 10000), 2), 'author': gen_author(rndm_n(1, 3))
           }
     return bk
 
