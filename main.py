@@ -4,7 +4,6 @@ from conf import MODEL as M
 from random import randint as rndm_n, uniform as rndm_flt
 
 fk = Faker('ru_RU')
-#fk = Faker('en_US')
 
 
 def pk_(counter_pk=1):
@@ -57,7 +56,6 @@ def initial():
             pk = next(pk_(_))
             data = {'model': M, 'pk': pk, 'fields': f_book_gen()}
             f1.write(json.dumps(data, indent=4, ensure_ascii=False))
-            #json.dump(data, f1,  indent=4, ensure_ascii=False)
 
 
 if __name__ == '__main__':
